@@ -1,0 +1,15 @@
+const formulario = document.getElementById("formularioLogin");
+formulario.addEventListener("submit", function(event){
+
+    event.preventDefault();
+    const email = document.getElementById("email").value;
+    const senha = document.getElementById("senha").value;
+    const mensagem = document.getElementById("mensagem");
+
+    if (email === "" || senha === ""){
+        mensagem.textContent = "Preencha todos os campos";
+
+        return;
+    }
+    mensagem.textContent = "Formulário preenchido corretamente!"
+})
