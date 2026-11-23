@@ -26,6 +26,16 @@ public class AuthController {
         if(ehAdmin){
             return "redirect:/admin.html";
         }
+
+        boolean ehVendedor = authentication.getAuthorities()
+                .stream()
+                .map(GrantedAuthority::getAuthority)
+                .anyMatch(permissao -> permissao.equals("ROLE_USER_VENDEDOR"));
+
+        if(ehAdmin){
+            return "redirect:/pagina_vendedor.html";
+        }
+
         return "redirect:/usuario.html";
     }
     @GetMapping("/csrf")

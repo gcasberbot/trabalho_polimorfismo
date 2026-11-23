@@ -17,10 +17,14 @@ public class SecurityConfig {
         http
                 .authorizeHttpRequests(auth -> auth.requestMatchers("/login", "/css/**","/js/**").permitAll()
                         .requestMatchers("/admin/**")
-                        .hasRole("ADMIN")
+                        .hasAnyRole("ADMIN")
+                        
 
                         .requestMatchers("/usuario/**")
-                        .hasAnyRole("ADMIN", "USER")
+                        .hasAnyRole("ADMIN", "USER", "USER_VENDEDOR")
+
+                        .requestMatchers("/painel_vendedor/**")
+                        .hasAnyRole("ADMIN", "USER_VENDEDOR")
 
                         .anyRequest().authenticated()
                 )
