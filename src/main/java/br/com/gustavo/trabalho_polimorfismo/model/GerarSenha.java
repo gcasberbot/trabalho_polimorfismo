@@ -8,7 +8,7 @@ public class GerarSenha {
         BCryptPasswordEncoder encoder =
                 new BCryptPasswordEncoder();
 
-        String senha = "1234567";
+        String senha = "123456";
 
         String hash = encoder.encode(senha);
 
