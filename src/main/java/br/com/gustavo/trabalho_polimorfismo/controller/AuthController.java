@@ -30,9 +30,9 @@ public class AuthController {
         boolean ehVendedor = authentication.getAuthorities()
                 .stream()
                 .map(GrantedAuthority::getAuthority)
-                .anyMatch(permissao -> permissao.equals("ROLE_USER_VENDEDOR"));
+                .anyMatch(permissao -> permissao.equals("ROLE_VENDEDOR"));
 
-        if(ehAdmin){
+        if(ehVendedor){
             return "redirect:/pagina_vendedor.html";
         }
 

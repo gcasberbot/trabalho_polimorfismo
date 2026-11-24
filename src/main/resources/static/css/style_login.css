@@ -1,0 +1,64 @@
+/* ===== Tokens de tema ===== */
+:root {
+  --main-bg: #ffffff;        /* fundo da página principal */
+  --main-text: #000000;      /* texto da página principal */
+  --dark-bg: #212529;        /* navbars, painéis e botões */
+  --dark-bg-hover: #343a40;
+  --dark-text: #ffffff;      /* texto sobre fundo dark */
+}
+
+/* ===== Página principal: fundo branco, texto preto ===== */
+body {
+  background-color: var(--main-bg);
+  color: var(--main-text);
+}
+
+.login-wrapper {
+  max-width: 380px;
+}
+
+/* ===== Botões: fundo dark, texto branco ===== */
+.btn-dark-custom {
+  background-color: var(--dark-bg);
+  border-color: var(--dark-bg);
+  color: var(--dark-text);
+  padding: 0.65rem 1rem;
+  font-weight: 600;
+}
+
+.btn-dark-custom:hover, .btn-dark-custom:focus-visible {
+  background-color: var(--dark-bg-hover);
+  border-color: var(--dark-bg-hover);
+  color: var(--dark-text);
+}
+
+.btn-dark-custom:active {
+  background-color: #000 !important;
+  border-color: #000 !important;
+  color: var(--dark-text) !important;
+}
+
+/* ===== Campos do formulário ===== */
+.form-control {
+  background-color: var(--main-bg);
+  color: var(--main-text);
+  border-color: #adb5bd;
+  padding: 0.65rem 0.8rem;
+}
+
+.form-control:focus {
+  background-color: var(--main-bg);
+  color: var(--main-text);
+  border-color: var(--dark-bg);
+  box-shadow: 0 0 0 0.2rem rgba(33, 37, 41, 0.25);
+}
+
+/* ===== Para usar depois no restante da aplicação ===== */
+.navbar-dark-custom, .panel-dark {
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+.navbar-dark-custom a, .navbar-dark-custom .navbar-brand, .panel-dark a {
+  color: var(--dark-text);
+}
